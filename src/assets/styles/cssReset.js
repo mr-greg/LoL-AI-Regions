@@ -83,7 +83,7 @@ select {
   body {
     color: black;
     font-family: 'Aclonica';
-    overflow: hidden;
+    /* overflow: hidden; */
 
     .button {
       transition: all 0.2s ease-in-out;
