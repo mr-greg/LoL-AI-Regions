@@ -1,7 +1,26 @@
-:root {
-  --whiteColor: white;
-}
-
 body {
-  background-color: rgb(71, 71, 71);
+  color: white;
+  font-family: "Mina";
+  h1,
+  h2,
+  h3 {
+    font-family: "MilkyWalky";
+    font-size: 96px;
+    font-weight: 300;
+  }
+  span:hover {
+    background-color: rgb(0, 0, 0, 0.2);
+  }
+
+  h5 {
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
+    opacity: 0.5;
+    height: fit-content;
+  }
 }

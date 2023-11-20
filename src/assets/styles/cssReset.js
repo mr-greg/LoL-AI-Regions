@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 export const GlobalResetStyle = createGlobalStyle`
 
 // Modern CSS reset
@@ -15,6 +15,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 figure,
 blockquote,
@@ -79,18 +80,4 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
-  body {
-    color: black;
-    font-family: 'Aclonica';
-    /* overflow: hidden; */
-
-    .button {
-      transition: all 0.2s ease-in-out;
-
-      &:hover {
-        background-color: #f2f2f2;
-      }
-    }
-  }
 `;
