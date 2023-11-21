@@ -30,8 +30,36 @@ export const StyledRegion = styled.section`
     position: absolute;
     bottom: 48px;
     left: 40px;
+    gap: 5px;
     p {
       white-space: break-spaces;
+    }
+  }
+
+  .guess {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    position: absolute;
+    bottom: 48px;
+    right: 40px;
+    gap: 5px;
+
+    input[type="text"] {
+      border: 1px solid rgb(255, 255, 255, 0.4);
+      box-shadow: 0 0 5px rgb(255, 255, 255, 0.4);
+      color: rgb(255, 255, 255, 0.8);
+    }
+
+    input[type="submit"] {
+      background-color: transparent;
+      color: rgb(255, 255, 255, 0.6);
+      border: 1px solid rgb(255, 255, 255, 0.4);
+      box-shadow: 0 0 5px rgb(255, 255, 255, 0.4);
+      cursor: pointer;
+    }
+    .disabled {
+      cursor: not-allowed !important;
     }
   }
 
