@@ -1,0 +1,4 @@
+- changer les icones en bas
+- ajouter support français 
+  -> bouton (défaut EN) dans le Home component, si select FR, collect dans un fichier data_fr ?
+- quote random

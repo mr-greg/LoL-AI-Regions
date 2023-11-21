@@ -43,6 +43,7 @@ export const StyledRegion = styled.section`
     bottom: 48px;
     left: 40px;
     gap: 5px;
+    max-width: 50%;
     p {
       white-space: break-spaces;
     }

@@ -49,7 +49,7 @@ export const DATA_DEMACIA = {
 
 export const DATA_IONIA = {
   bg: bgIonia,
-  title: "“Fight for the First Lands !”",
+  title: "“My Blade is at Your Service”",
   desc: "Although these lands'enchantments can be fickle, its creatures dangerous and fae, for many centuries most Ionians led lives of plenty. The warrior monasteries, provincial militias—and even Ionia itself—had been enough to protect them.",
   prompt:
     "“a fantasy moutain scene with a mountain and many fantasy trees, in the style of light red and violet, grandiose ruins, light white and orange, fantasy organic formations cherry blossom style”",

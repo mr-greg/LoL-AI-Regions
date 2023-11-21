@@ -18,16 +18,49 @@ import {
   DATA_VOID,
 } from "../data/data";
 import {
+  DATA_FR_SHADOWISLES,
+  DATA_FR_BANDLECITY,
+  DATA_FR_BILGEWATER,
+  DATA_FR_DEMACIA,
+  DATA_FR_IONIA,
+  DATA_FR_IXTAL,
+  DATA_FR_FRELJORD,
+  DATA_FR_NOXUS,
+  DATA_FR_PILTOVER,
+  DATA_FR_SHURIMA,
+  DATA_FR_TARGON,
+  DATA_FR_ZAUN,
+  DATA_FR_VOID,
+} from "../data/data_fr";
+import {
   ArrowImage,
   ArrowsContainer,
   HorizontalScrollContainer,
   ScrollSection,
+  StyledLogo,
+  StyledWrapper,
 } from "./Home.style";
+import LangButtons from "../components/LangButtons/LangButtons";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import { IoPlayBackCircle } from "react-icons/io5";
+import { IconContext } from "react-icons";
+import logo from "../assets/images/logo.png";
 
 const Home = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState("EN");
+
+  const handleLanguageChange = (lang) => {
+    setSelectedLanguage(lang);
+  };
+  useEffect(() => {
+    console.log("selected language: ", selectedLanguage);
+  }, [selectedLanguage]);
+
   const scrollContainerRef = useRef();
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  // const [french, setFrench] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,65 +130,108 @@ const Home = () => {
 
   return (
     <div>
+      <StyledLogo>
+        <img src={logo} alt="Mr. Greg Logo" />
+      </StyledLogo>
+      <StyledWrapper>
+        <LangButtons
+          selectedLanugage={selectedLanguage}
+          onLanguageChange={handleLanguageChange}
+        />
+      </StyledWrapper>
       <HorizontalScrollContainer ref={scrollContainerRef}>
         <ScrollSection>
-          <Region data={DATA_SHADOWISLES} />
+          <Region
+            data={
+              selectedLanguage === "EN" ? DATA_SHADOWISLES : DATA_FR_SHADOWISLES
+            }
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_BANDLECITY} />
+          <Region
+            data={
+              selectedLanguage === "EN" ? DATA_BANDLECITY : DATA_FR_BANDLECITY
+            }
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_BILGEWATER} />
+          <Region
+            data={
+              selectedLanguage === "EN" ? DATA_BILGEWATER : DATA_FR_BILGEWATER
+            }
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_DEMACIA} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_DEMACIA : DATA_FR_DEMACIA}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_NOXUS} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_NOXUS : DATA_FR_NOXUS}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_IONIA} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_IONIA : DATA_FR_IONIA}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_IXTAL} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_IXTAL : DATA_FR_IXTAL}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_FRELJORD} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_FRELJORD : DATA_FR_FRELJORD}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_PILTOVER} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_PILTOVER : DATA_FR_PILTOVER}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_ZAUN} />
+          <Region data={selectedLanguage === "EN" ? DATA_ZAUN : DATA_FR_ZAUN} />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_SHURIMA} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_SHURIMA : DATA_FR_SHURIMA}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_TARGON} />
+          <Region
+            data={selectedLanguage === "EN" ? DATA_TARGON : DATA_FR_TARGON}
+          />
         </ScrollSection>
         <ScrollSection>
-          <Region data={DATA_VOID} />
+          <Region data={selectedLanguage === "EN" ? DATA_VOID : DATA_FR_VOID} />
         </ScrollSection>
       </HorizontalScrollContainer>
 
       <ArrowsContainer>
         {showLeftArrow && (
-          <ArrowImage
-            src={arrow}
-            alt="Left Arrow"
+          <FaArrowAltCircleLeft
+            size="1.2em"
+            color="rgba(255, 255, 255, 0.4)"
             onClick={scrollLeft}
-            style={{ transform: "rotate(180deg)" }}
+            style={{ cursor: "pointer" }}
           />
         )}
         {showRightArrow && (
-          <ArrowImage src={arrow} alt="Right Arrow" onClick={scrollRight} />
+          <FaArrowAltCircleRight
+            size="1.2em"
+            color="rgba(255, 255, 255, 0.4)"
+            onClick={scrollRight}
+            style={{ cursor: "pointer" }}
+          />
         )}
         {!showRightArrow && (
-          <ArrowImage
-            src={backArrow}
-            alt="Back to start arrow"
+          <IoPlayBackCircle
+            size="1.2em"
+            color="rgba(255, 255, 255, 0.4)"
             onClick={backToStart}
+            style={{ cursor: "pointer" }}
           />
         )}
       </ArrowsContainer>
