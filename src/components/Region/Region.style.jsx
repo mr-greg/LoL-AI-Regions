@@ -1,4 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const rotate = keyframes`
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+`;
 
 export const StyledRegion = styled.section`
   width: 100vw;
@@ -11,6 +19,10 @@ export const StyledRegion = styled.section`
   display: flex;
   flex-direction: column;
   align-items: end;
+
+  .rotate {
+    animation: ${rotate} 0.5s linear;
+  }
 
   .infos {
     min-width: 444px;
@@ -41,8 +53,7 @@ export const StyledRegion = styled.section`
     align-items: start;
     flex-direction: column;
     position: absolute;
-    bottom: 48px;
-    right: 40px;
+    bottom: 12%;
     gap: 5px;
 
     input[type="text"] {
@@ -61,6 +72,15 @@ export const StyledRegion = styled.section`
     .disabled {
       cursor: not-allowed !important;
     }
+    .label-wrapper {
+      position: relative;
+      .checkmark {
+        position: absolute;
+        bottom: 25%;
+        right: 1%;
+        width: 24px;
+      }
+    }
   }
 
   /* tablettes */
@@ -77,6 +97,9 @@ export const StyledRegion = styled.section`
       p {
         white-space: break-spaces;
       }
+    }
+    .guess {
+      bottom: 25%;
     }
   }
 
@@ -97,6 +120,9 @@ export const StyledRegion = styled.section`
         white-space: break-spaces;
       }
     }
+    .guess {
+      bottom: 25%;
+    }
   }
 
   @media screen and (max-width: 300px) {
@@ -114,6 +140,9 @@ export const StyledRegion = styled.section`
       p {
         white-space: break-spaces;
       }
+    }
+    .guess {
+      bottom: 25%;
     }
   }
 `;
